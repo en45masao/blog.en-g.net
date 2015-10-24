@@ -1,3 +1,14 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+baseurl = "http://blog.en-g.net/"
+languageCode = "ja"
+title = "blog.en-g.net"
+footnotereturnlinkcontents = "↩"
+
+[params]
+author = "en45masao"
+
+[permalinks]
+post = "/:year/:month/:day/"
+
+[blackfriday]
+extensions = ["definitionLists"]
+extensionsmask = ["autoHeaderIds"]

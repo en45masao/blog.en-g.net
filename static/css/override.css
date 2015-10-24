@@ -1,0 +1,37 @@
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.667em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+p {
+	margin-bottom: 1.25em;
+}
+
+p:lang(ja), ul:lang(ja), ol:lang(ja), dl:lang(ja) {
+	line-height: 1.75;
+}
+
+ul, ol {
+	margin-left: 0;
+	padding-left: 32px;
+	padding-right: 8px;
+}
+
+blockquote {
+	font-size: 1em;
+}
+
+.label {
+	opacity: 0.75;
+}
+
+.panel > ul > li, .panel > ol > li {
+	margin-top: 8px;
+}

@@ -1,0 +1,18 @@
+		{{ $pag := $.Paginator }}
+		{{ if gt $pag.TotalPages 1 }}
+		<nav>
+			<ul class="pagination">
+				{{ with $pag.First }}
+				<li{{ if not $pag.HasPrev }} class="disabled"{{ end }}><a{{ if $pag.HasPrev }} href="{{ .URL }}"{{ end }}>&laquo;&laquo;</a></li>
+				{{ end }}
+				<li{{ if not $pag.HasPrev }} class="disabled"{{ end }}><a{{ if $pag.HasPrev }} href="{{ $pag.Prev.URL }}"{{ end }}>&laquo;</a></li>
+				{{ range $pag.Pagers }}
+				<li{{ if eq . $pag }} class="active"{{ end }}><a{{ if ne . $pag }} href="{{ .URL }}"{{ end }}>{{ .PageNumber }}</a></li>
+				{{ end }}
+				<li{{ if not $pag.HasNext }} class="disabled"{{ end }}><a{{ if $pag.HasNext }} href="{{ $pag.Next.URL }}"{{ end }}>&raquo;</a></li>
+				{{ with $pag.Last }}
+				<li{{ if not $pag.HasNext }} class="disabled"{{ end }}><a{{ if $pag.HasNext }} href="{{ .URL }}"{{ end }}>&raquo;&raquo;</a></li>
+				{{ end }}
+			</ul>
+		</nav>
+		{{ end }}

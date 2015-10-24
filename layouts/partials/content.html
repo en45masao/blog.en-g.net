@@ -1,0 +1,16 @@
+		<article lang="{{ .Site.LanguageCode }}">
+			<header>
+				<h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+				{{ if .Params.tags }}
+				<div class="pull-right">
+					Tags:{{ range .Params.tags }} <a href="/tags/{{ . | urlize }}" class="label label-default">{{ . }}</a>{{ end }}
+				</div>
+				{{ end }}
+				<div>
+					<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+				</div>
+			</header>
+			<section>
+{{ .Content }}
+			</section>
+		</article>

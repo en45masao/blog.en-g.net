@@ -1,0 +1,37 @@
+{{ partial "header.html" . }}
+
+<div class="row">
+	<main class="col-sm-12 col-md-8">
+		<header>
+			<h1>{{ .Title }}</h1>
+		</header>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Title <span class="pull-right">Tags</span></th>
+				</tr>
+			</thead>
+			<tbody>
+			{{ range (where .Data.Pages "Type" "post") }}
+				<tr>
+					<td><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time></td>
+					<td>
+						<a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if .Draft }} <span class="label label-info">Draft</span>{{ end }}
+						{{ if .Params.tags }}
+						<div class="pull-right">
+							{{ range .Params.tags }} <a href="/tags/{{ . | urlize }}" class="label label-default">{{ . }}</a>{{ end }}
+						</div>
+						{{ end }}
+					</td>
+				</tr>
+			{{ end }}
+			</tbody>
+		</table>
+	</main>
+	<aside class="col-sm-12 col-md-4">
+{{ partial "sidebar.html" . }}
+	</aside>
+</div>
+
+{{ partial "footer.html" . }}
