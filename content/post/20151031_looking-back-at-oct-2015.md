@@ -1,16 +1,10 @@
 +++
 date = "2015-10-31"
-draft = true
+draft = false
 title = "今月の振り返り (2015年10月)"
 tags = ["life"]
 
 +++
-
-<script>
-jQuery(function($) {
-	$('article table').addClass('table');
-});
-</script>
 
 10月ももう終わり。そして今年もあと2か月。
 
