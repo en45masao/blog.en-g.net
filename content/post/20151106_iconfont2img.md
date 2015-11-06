@@ -1,6 +1,6 @@
 +++
-date = "2015-11-03T21:28:23+09:00"
-draft = true
+date = "2015-11-06"
+draft = false
 title = "URLにパラメータを指定するとアイコンフォントの画像をSVGで返すWebサービスがあると便利かも"
 tags = ["webdev"]
 
