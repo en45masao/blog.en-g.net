@@ -1,24 +1,26 @@
-		<nav class="col-xs-12 col-sm-7 col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h1 class="panel-title">Recent Posts</h1>
+		<div class="row">
+			<nav class="col-xs-12 col-sm-7 col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h1 class="panel-title">Recent Posts</h1>
+					</div>
+					<ul>
+					{{ range first 5 .Site.Pages }}
+						<li><a href="{{ .RelPermalink }}" class="_list-group-item">{{ .Title }}</a></li>
+					{{ end }}
+					</ul>
 				</div>
-				<ul>
-				{{ range first 5 .Site.Pages }}
-					<li><a href="{{ .RelPermalink }}" class="_list-group-item">{{ .Title }}</a></li>
-				{{ end }}
-				</ul>
-			</div>
-		</nav>
-		<nav class="col-xs-12 col-sm-5 col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h1 class="panel-title">Tags</h1>
+			</nav>
+			<nav class="col-xs-12 col-sm-5 col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h1 class="panel-title">Tags</h1>
+					</div>
+					<div class="list-group">
+					{{ range $name, $value := .Site.Taxonomies.tags }}
+						<a href="/tags/{{ $name | urlize }}" class="list-group-item">{{ $name }} <span class="badge">{{ .Count }}</span></a>
+					{{ end }}
+					</div>
 				</div>
-				<div class="list-group">
-				{{ range $name, $value := .Site.Taxonomies.tags }}
-					<a href="/tags/{{ $name | urlize }}" class="list-group-item">{{ $name }} <span class="badge">{{ .Count }}</span></a>
-				{{ end }}
-				</div>
-			</div>
-		</nav>
+			</nav>
+		</div>
