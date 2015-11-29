@@ -10,5 +10,4 @@ author = "en45masao"
 post = "/:year/:month/:day/"
 
 [blackfriday]
-extensions = ["definitionLists"]
 extensionsmask = ["autoHeaderIds"]
