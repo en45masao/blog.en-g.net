@@ -25,6 +25,7 @@ ul, ol {
 }
 
 dd {
+	margin-bottom: 1em;
 	padding-left: 1em;
 }
 
